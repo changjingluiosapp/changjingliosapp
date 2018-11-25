@@ -11,6 +11,9 @@
           var w = document.getElementById('wei_div');
           w.style.display='none'
         }
+        if (is_weixn()){
+          document.getElementById('onweb').innerHTML = '<a class="download">点击安装</a>'
+        }
       }
       function is_weixn(){
         var ua = navigator.userAgent.toLowerCase();
@@ -28,7 +31,8 @@
       function onWeb() {
         if(is_weixn()){
           alert('点击右上角按钮,然后在弹出的菜单中点击Safari中打开，即可安装')
-          window.alert = function(str){return ;}
+        }else {
+          document.getElementById('onweb').innerHTML = '<a class="download">等待安装</a>'
         }
       }
       function onCloseDistrust() {
@@ -62,7 +66,7 @@
     <div class="distrust">
         <p onclick="onDistrust();"><img class="finger" src="src/img/finger.png">"未受信任的企业级开发者"的解决办法</p>
     </div>
-    <div onclick="onWeb()">
+    <div onclick="onWeb()" id="onweb">
         <a class="download" href="itms-services://?action=download-manifest&url=https://github.com/gdj2032/gdj.github.io/raw/master/manifest.plist">点击安装</a>
     </div>
     <div style="text-align:center; ">
