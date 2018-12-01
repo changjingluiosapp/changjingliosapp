@@ -10,9 +10,7 @@
         if(is_weixn()){
           var w = document.getElementById('wei_div');
           w.style.display='block'
-        }
-        if (is_weixn()){
-          document.getElementById('onweb').innerHTML = '<a class="download">点击安装</a>'
+          document.getElementById('onweb').innerHTML = '<a class="download">下载iOS版</a>'
         }
       }
       function is_weixn(){
@@ -31,8 +29,6 @@
       function onWeb() {
         if(is_weixn()){
           alert('点击右上角按钮,然后在弹出的菜单中点击Safari中打开，即可安装')
-        }else {
-          document.getElementById('onweb').innerHTML = '<a class="download">等待安装</a>'
         }
       }
       function onCloseDistrust() {
@@ -57,24 +53,48 @@
         <span class="cjlzx">长颈鹿资讯</span>
         <span class="edition">企业版</span>
     </div>
-    <div class="edition_size">
-        <span>版本：1.3.1</span>
-        &nbsp;&nbsp;
-        <span>大小：5.2M</span>
-    </div>
     <div class="qrCodeDiv">
         <img class="qrCode" src="src/img/cjliOS.png">
     </div>
     <div class="distrust">
         <p onclick="onDistrust();"><img class="finger" src="src/img/finger.png">"未受信任的企业级开发者"的解决办法</p>
     </div>
-    <div onclick="onWeb()" id="onweb">
-        <a class="download" href="itms-services://?action=download-manifest&url=https%3A%2F%2Fwww.pgyer.com%2Fapiv2%2Fapp%2Fplist%3FappKey%3D489b216fd99616f522a55c88c18286a2%26_api_key%3D8e61399498758e977a09c530f13186e2">点击安装</a>
-    </div>
     <div style="text-align:center; ">
         <p style="padding-top:10px;color:#969b9d;">或者用手机扫描二维码安装</p>
     </div>
 </div>
+
+<div class="app">
+    <div class="ios">
+        <div class="center app_icon_div">
+            <img class="app_icon" src="src/img/ios.png">
+        </div>
+        <div class="center edition_size">
+            <span>版本：1.3.4</span>
+            <span>大小：5.4M</span>
+        </div>
+        <div class="center onweb" id="onweb" onclick="onWeb()" >
+            <a class="downloadios" href="itms-services://?action=download-manifest&url=https%3A%2F%2Fwww.pgyer.com%2Fapiv2%2Fapp%2Fplist%3FappKey%3D489b216fd99616f522a55c88c18286a2%26_api_key%3D8e61399498758e977a09c530f13186e2">
+                下载iOS版
+            </a>
+        </div>
+    </div>
+    <div class="android">
+        <div class="center app_icon_div">
+            <img class="app_icon" src="src/img/android.png">
+        </div>
+        <div class="center edition_size">
+            <span>版本：1.3.4</span>
+            <span>大小：9.1M</span>
+        </div>
+        <div class="center onweb" >
+            <a class="downloadand" href="https://www.pgyer.com/apiv2/app/install?appKey=cc5bcb7f7a66008141ff6af8886f147d&_api_key=8e61399498758e977a09c530f13186e2">
+                下载android版
+            </a>
+        </div>
+    </div>
+</div>
+
 <div class="foot">
     <a href="https://changjinglu.pro" class="cjl">长颈鹿</a>
 </div>
